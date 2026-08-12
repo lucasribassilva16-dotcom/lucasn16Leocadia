@@ -1,0 +1,265 @@
+
+/* ==============================
+   CONFIGURACOES GERAIS
+   ============================== */
+
+:root {
+    --cor-fundo: #f5f5f5;
+    --cor-texto: #222222;
+    --cor-principal: #145da0;
+    --cor-principal-hover: #0d3f6e;
+    --cor-superficie: #ffffff;
+    --cor-borda: #cccccc;
+
+    --tamanho-fonte: 1rem;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: var(--tamanho-fonte);
+    line-height: 1.7;
+}
+
+/* ==============================
+   ACESSIBILIDADE
+   ============================== */
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* ==============================
+   CONTAINER
+   ============================== */
+
+.container {
+    width: min(1100px, 90%);
+    margin: 0 auto;
+}
+
+/* ==============================
+   CABEÇALHO
+   ============================== */
+
+.cabecalho {
+    background-color: var(--cor-principal);
+    color: #ffffff;
+    padding: 2rem 0;
+}
+
+.cabecalho h1 {
+    margin: 0 0 1.5rem;
+    font-size: 2rem;
+    line-height: 1.3;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+nav a {
+    color: #ffffff;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+nav a:hover {
+    text-decoration: none;
+}
+
+/* ==============================
+   CONTEUDO
+   ============================== */
+
+main {
+    padding: 3rem 0;
+}
+
+section {
+    background-color: var(--cor-superficie);
+    border-radius: 8px;
+    border: 1px solid var(--cor-borda);
+    margin-bottom: 2rem;
+    padding: 2rem;
+}
+
+section h2 {
+    color: var(--cor-principal);
+    font-size: 1.6rem;
+    line-height: 1.4;
+    margin-top: 0;
+}
+
+p {
+    margin: 0 0 1.2rem;
+}
+
+p:last-child {
+    margin-bottom: 0;
+}
+
+/* ==============================
+   PAINEL DE ACESSIBILIDADE
+   ============================== */
+
+.acessibilidade {
+    background-color: #e8eef3;
+    border-top: 3px solid var(--cor-principal);
+    padding: 2rem 5%;
+}
+
+.acessibilidade h2 {
+    margin-top: 0;
+}
+
+.acessibilidade button {
+    background-color: var(--cor-principal);
+    border: 2px solid var(--cor-principal);
+    border-radius: 5px;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 0.4rem;
+    min-height: 48px;
+    padding: 0.7rem 1rem;
+}
+
+.acessibilidade button:hover {
+    background-color: var(--cor-principal-hover);
+}
+
+/* ==============================
+   FOCO PARA TECLADO
+   ============================== */
+
+a:focus,
+button:focus {
+    outline: 4px solid #ffbf00;
+    outline-offset: 3px;
+}
+
+/* ==============================
+   RODAPÉ
+   ============================== */
+
+.rodape {
+    background-color: #222222;
+    color: #ffffff;
+    padding: 1.5rem 0;
+    text-align: center;
+}
+
+/* ==============================
+   ALTO CONTRASTE
+   ============================== */
+
+body.alto-contraste {
+    --cor-fundo: #000000;
+    --cor-texto: #ffffff;
+    --cor-principal: #ffff00;
+    --cor-principal-hover: #ffffff;
+    --cor-superficie: #000000;
+    --cor-borda: #ffffff;
+
+    background-color: #000000;
+    color: #ffffff;
+}
+
+body.alto-contraste .cabecalho {
+    background-color: #000000;
+    border-bottom: 3px solid #ffffff;
+}
+
+body.alto-contraste nav a,
+body.alto-contraste section h2 {
+    color: #ffff00;
+}
+
+body.alto-contraste section {
+    background-color: #000000;
+    border-color: #ffffff;
+}
+
+body.alto-contraste .acessibilidade {
+    background-color: #000000;
+    border-top-color: #ffffff;
+}
+
+body.alto-contraste .acessibilidade button {
+    background-color: #000000;
+    border-color: #ffff00;
+    color: #ffff00;
+}
+
+body.alto-contraste .rodape {
+    background-color: #000000;
+    border-top: 2px solid #ffffff;
+}
+
+/* ==============================
+   RESPONSIVIDADE
+   ============================== */
+
+@media (max-width: 600px) {
+    .cabecalho {
+        padding: 1.5rem 0;
+    }
+
+    .cabecalho h1 {
+        font-size: 1.6rem;
+    }
+
+    main {
+        padding: 2rem 0;
+    }
+
+    section {
+        padding: 1.5rem;
+    }
+
+    .acessibilidade button {
+        display: block;
+        margin: 0.6rem 0;
+        width: 100%;
+    }
+}
+
+/* ==============================
+   REDUCAO DE MOVIMENTO
+   ============================== */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
